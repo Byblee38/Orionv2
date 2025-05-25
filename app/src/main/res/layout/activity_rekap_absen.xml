@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A1A"
+    tools:context=".RekapAbsenActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/header"
+        android:background="#333333"
+        android:paddingHorizontal="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/backicon"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/header">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border"
+            android:padding="10dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/peoplesicon"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Keseluruhan"
+                android:backgroundTint="#1F90FF"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:padding="10dp"
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/peopleicon"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Per orang"
+                android:backgroundTint="#1F90FF"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

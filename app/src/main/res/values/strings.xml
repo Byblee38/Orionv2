@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Orion</string>
+    <string name="made_by">Made by <font color="#4285F4">AstroByte</font></string>
+    <string name="kontrol">Kontrol \ndalam tangan, \ndengan <font color="#4285F4"><big>Orion</big></font></string>
+    <string-array name="jurusan">
+        <item>Teknik Pemesinan</item>
+        <item>Teknik Kendaraan Ringan</item>
+        <item>Teknik Bisnis Sepeda Motor</item>
+        <item>Teknik Instalasi Tenaga Listrik</item>
+        <item>Rekayasa Perangkat Lunak</item>
+        <item>Akuntansi</item>
+    </string-array>
+</resources>

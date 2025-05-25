@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A1A"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo_orion_"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="106dp"
+        android:layout_marginLeft="25dp"
+        android:src="@drawable/orion" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kontrol"
+        android:textSize="35dp"
+        android:id="@+id/text"
+        android:textColor="@color/white"
+        android:fontFamily="@font/interbold"
+        android:layout_marginLeft="56dp"
+        android:layout_below="@+id/logo_orion_"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#1F90FF"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="40dp"
+        android:id="@+id/btnIsiAbsen"
+        android:layout_centerHorizontal="true"
+        android:text="ISI ABSEN SISWA"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btnIsiAbsen"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        >
+
+        <Button
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            app:strokeColor="@color/white"
+            android:backgroundTint="#1A1A1A"
+            app:strokeWidth="1dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/btnDataSiswa"
+            android:text="DATA\nSISWA"/>
+
+        <Button
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            app:strokeColor="@color/white"
+            android:backgroundTint="#1A1A1A"
+            app:strokeWidth="1dp"
+            android:id="@+id/btnRekapAbsen"
+            android:text="REKAP\nABSEN"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

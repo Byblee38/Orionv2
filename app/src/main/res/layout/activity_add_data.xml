@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A1A"
+    tools:context=".AddDataActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/header"
+        android:background="#333333"
+        android:paddingHorizontal="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/backicon"
+            android:contentDescription="button back"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/forImg"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_below="@+id/header"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/orion"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/forImg"
+        android:textColorHint="#555"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nama"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:id="@+id/inpName"
+                android:textColor="@color/white"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorHint="#555"
+            android:hint="NISN"
+            android:layout_marginTop="15dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:id="@+id/inpNisn"
+                android:textColor="@color/white"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinJur"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:spinnerMode="dropdown"
+            android:background="@android:drawable/btn_dropdown"
+            />
+
+        <RadioGroup
+            android:layout_width="350dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/Lk"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textColor="@color/white"
+                android:text="Laki-Laki"/>
+
+            <RadioButton
+                android:id="@+id/Pr"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/white"
+                android:text="Perempuan"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#1F90FF"
+            android:layout_below="@+id/text"
+            android:layout_marginTop="40dp"
+            android:id="@+id/btnSimpan"
+            android:layout_centerHorizontal="true"
+            android:text="TAMBAH DATA" />
+    </LinearLayout>
+</RelativeLayout>

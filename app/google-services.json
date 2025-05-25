@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "125845593450",
+    "project_id": "orion-a5ba9",
+    "storage_bucket": "orion-a5ba9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:125845593450:android:154b684b9651c373ae5913",
+        "android_client_info": {
+          "package_name": "com.astrobyte.orion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqDXFWWfHHQZ9pYSifso45pWNj_OyP7z8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
