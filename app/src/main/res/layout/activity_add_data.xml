@@ -72,6 +72,7 @@
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:id="@+id/inpNisn"
+                android:inputType="number"
                 android:textColor="@color/white"
                 />
         </com.google.android.material.textfield.TextInputLayout>

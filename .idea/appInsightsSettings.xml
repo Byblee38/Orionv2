@@ -10,9 +10,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.astrobyte.orion" />
-                  <option name="mobileSdkAppId" value="1:577459921898:android:18a846a4dd9dcaef15c893" />
-                  <option name="projectId" value="orion-8738c" />
-                  <option name="projectNumber" value="577459921898" />
+                  <option name="mobileSdkAppId" value="1:125845593450:android:154b684b9651c373ae5913" />
+                  <option name="projectId" value="orion-a5ba9" />
+                  <option name="projectNumber" value="125845593450" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

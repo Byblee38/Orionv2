@@ -20,100 +20,23 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/backicon"
-            android:contentDescription="button back"/>
+            android:id="@+id/btnBack"
+            android:contentDescription="button back" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="370dp"
-        android:padding="10dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/header"
-        android:orientation="vertical"
+        android:layout_below="@id/header"
+        android:id="@+id/recyclerViewSiswa"
         android:layout_marginTop="15dp"
-        android:background="@drawable/border">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:src="@drawable/user"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="15dp"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/interbold"
-                        android:text="Bayu Kresna Mukti"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/inter"
-                        android:text="0066228098"/>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:gravity="end|center"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="49dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/menu_vertical_svgrepo_com"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="10dp"
-            android:background="#fff"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Laki-laki"
-                android:fontFamily="@font/inter"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="XI RPL 2"
-                android:fontFamily="@font/inter"
-                android:textColor="@color/white"/>
-        </LinearLayout>
-    </LinearLayout>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:layout_height="match_parent"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_alignParentBottom="true"
+        android:id="@+id/forBtn"
         android:layout_alignParentRight="true"
         android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"

@@ -1,5 +1,6 @@
 package com.astrobyte.orion
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -54,6 +55,9 @@ class AddDataActivity : AppCompatActivity() {
                         inputNisn.setText("")
                         inputJk.isChecked = false
                         spinnerPilihan.setSelection(0)
+
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
                     }
                     .addOnFailureListener {
                         Toast.makeText(this, "Data gagal ditambahkan", Toast.LENGTH_SHORT).show()
