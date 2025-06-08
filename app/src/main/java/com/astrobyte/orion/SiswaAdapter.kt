@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class SiswaAdapter(private val listSiswa: List<Siswa>) :
-    RecyclerView.Adapter<SiswaAdapter.ViewHolder>() {
+class SiswaAdapter(
+    private val listSiswa: ArrayList<DataSiswa>,
+    private val onDeleteClick: (DataSiswa) -> Unit = {},
+    private val onUpdateClick: (DataSiswa) -> Unit
+) : RecyclerView.Adapter<SiswaAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvnama: TextView = itemView.findViewById(R.id.nama)
@@ -31,7 +33,7 @@ class SiswaAdapter(private val listSiswa: List<Siswa>) :
         holder.tvnama.text = siswa.nama
         holder.tvnisn.text = siswa.nisn
         holder.tvjurusan.text = siswa.jurusan
-        holder.tvjk.text = siswa.jenis_kelamin
+        holder.tvjk.text = siswa.jenisKelamin
 
         holder.menuBtn.setOnClickListener {
             val popup = PopupMenu(it.context, it)
@@ -40,13 +42,11 @@ class SiswaAdapter(private val listSiswa: List<Siswa>) :
             popup.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.action_update -> {
-                        Toast.makeText(it.context, "Update: ${siswa.nama}", Toast.LENGTH_SHORT).show()
-                        // Tambahkan intent ke UpdateActivity jika ada
+                        onUpdateClick(siswa)
                         true
                     }
                     R.id.action_delete -> {
-                        Toast.makeText(it.context, "Delete: ${siswa.nama}", Toast.LENGTH_SHORT).show()
-                        // Tambahkan logika untuk menghapus data
+                        onDeleteClick(siswa)
                         true
                     }
                     else -> false

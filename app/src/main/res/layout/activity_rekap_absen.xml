@@ -18,6 +18,7 @@
 
         <ImageButton
             android:layout_width="48dp"
+            android:id="@+id/btnBack"
             android:layout_height="48dp"
             android:background="@drawable/backicon"/>
     </LinearLayout>

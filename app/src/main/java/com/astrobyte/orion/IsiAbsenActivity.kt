@@ -16,7 +16,7 @@ class IsiAbsenActivity : AppCompatActivity() {
         val btnBack: ImageButton = findViewById(R.id.backIcon)
 
         btnBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }
