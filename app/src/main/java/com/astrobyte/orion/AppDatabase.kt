@@ -4,9 +4,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [DataSiswa::class], version = 1)
+@Database(entities = [DataSiswa::class, AbsenSiswa::class], version = 2)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun dataSiswaDao(): DataSiswaDao
+    abstract fun absenSiswaDao(): AbsenSiswaDao
 
     companion object {
         @Volatile private var INSTANCE: AppDatabase? = null
@@ -17,10 +18,13 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "datasiswa_db"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration() // supaya bisa migrasi versi baru
+                    .build()
                 INSTANCE = instance
                 instance
             }
         }
     }
 }
+

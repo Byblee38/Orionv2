@@ -52,10 +52,9 @@ class DataSiswaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val btnBack: ImageButton = findViewById(R.id.btnBack)
+        val btnBack: ImageButton = findViewById(R.id.btnBackDataSiwa)
         btnBack.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
         loadData()

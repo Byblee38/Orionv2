@@ -19,7 +19,7 @@
         <ImageButton
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:id="@+id/backIcon"
+            android:id="@+id/backIconAbsen"
             android:background="@drawable/backicon"
             android:contentDescription="back"/>
     </LinearLayout>
@@ -30,17 +30,25 @@
         android:layout_below="@+id/header"
         android:layout_height="match_parent">
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnCount="2"
-            android:layout_below="@+id/header_title"
-            android:layout_marginTop="20dp">
-
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleAbsen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 />
-        </GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#1F90FF"
+            android:id="@+id/btnSimpanAbsen"
+            android:text="SUBMIT ABSENSI" />
     </LinearLayout>
 </RelativeLayout>

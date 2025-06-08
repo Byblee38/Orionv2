@@ -21,7 +21,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/backicon"
-            android:id="@+id/btnBack"
+            android:id="@+id/btnBackUpdate"
             android:contentDescription="button back"/>
     </LinearLayout>
 
@@ -115,11 +115,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
+        android:gravity="center"
         android:layout_height="wrap_content">
 
         <Button
@@ -127,9 +126,7 @@
             android:layout_height="50dp"
             android:backgroundTint="#1F90FF"
             android:layout_below="@+id/text"
-            android:layout_marginTop="40dp"
             android:id="@+id/btnSimpan"
-            android:layout_centerHorizontal="true"
             android:text="UPDATE DATA" />
     </LinearLayout>
 </RelativeLayout>

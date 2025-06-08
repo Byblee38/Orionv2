@@ -18,11 +18,10 @@ class UpdateDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_data)
 
-        val btnBack: ImageButton = findViewById(R.id.btnBack)
+        val btnBack: ImageButton = findViewById(R.id.btnBackUpdate)
 
         btnBack.setOnClickListener {
-            val intent = Intent(this, DataSiswaActivity::class.java)
-            startActivity(intent)
+           finish()
         }
 
         siswa = intent.getParcelableExtra<DataSiswa>("EXTRA_SISWA") ?: DataSiswa().also {

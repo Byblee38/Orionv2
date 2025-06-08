@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -30,11 +31,10 @@ class AddDataActivity : AppCompatActivity() {
         val inputNisn: TextInputEditText = findViewById(R.id.inpNisn)
         val inputJk: RadioButton = findViewById(R.id.Lk)
         val spinnerPilihan: Spinner = findViewById(R.id.spinJur)
-        val buttonBack : ImageButton = findViewById(R.id.btnBack)
+        val buttonBack : ImageButton = findViewById(R.id.btnBackAddData)
 
         buttonBack.setOnClickListener {
-            val intent = Intent(this, DataSiswaActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
         ArrayAdapter.createFromResource(
@@ -47,12 +47,21 @@ class AddDataActivity : AppCompatActivity() {
         }
 
         val btnSimpan: Button = findViewById(R.id.btnSimpan)
+        val btnBack: ImageButton = findViewById(R.id.btnBackUpdate)
+
+        btnBack.setOnClickListener{
+            finish()
+        }
 
         btnSimpan.setOnClickListener {
             val nama = inputNama.text.toString()
             val nisn = inputNisn.text.toString()
             val jurusan = spinnerPilihan.selectedItem.toString()
-            val jenisKelamin = if (inputJk.isChecked) "Laki-Laki" else "Perempuan"
+            val radioGroupJK: RadioGroup = findViewById(R.id.radioGroupJK)
+            val selectedJKId = radioGroupJK.checkedRadioButtonId
+            val selectedRadioButton = findViewById<RadioButton>(selectedJKId)
+            val jenisKelamin = selectedRadioButton.text.toString()
+
 
             val siswa = DataSiswa(
                 nisn = nisn,
@@ -62,16 +71,22 @@ class AddDataActivity : AppCompatActivity() {
             )
 
             lifecycleScope.launch {
-                dao.insert(siswa)
-                runOnUiThread {
-                    Toast.makeText(this@AddDataActivity, "Data berhasil disimpan", Toast.LENGTH_SHORT).show()
-                    inputNama.setText("")
-                    inputNisn.setText("")
-                    inputJk.isChecked = false
-                    spinnerPilihan.setSelection(0)
+                val existingSiswa = dao.getByNisn(nisn)
+                if (existingSiswa != null) {
+                    Toast.makeText(this@AddDataActivity, "Data siswa sudah ada", Toast.LENGTH_SHORT).show()
+                    return@launch
+                }else{
+                    dao.insert(siswa)
+                    runOnUiThread {
+                        Toast.makeText(this@AddDataActivity, "Data berhasil disimpan", Toast.LENGTH_SHORT).show()
+                        inputNama.setText("")
+                        inputNisn.setText("")
+                        inputJk.isChecked = false
+                        spinnerPilihan.setSelection(0)
 
-                    val intent = Intent(this@AddDataActivity, MainActivity::class.java)
-                    startActivity(intent)
+                        val intent = Intent(this@AddDataActivity, DataSiswaActivity::class.java)
+                        startActivity(intent)
+                    }
                 }
             }
         }

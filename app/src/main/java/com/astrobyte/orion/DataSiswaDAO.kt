@@ -15,4 +15,7 @@ interface DataSiswaDao {
 
     @Update
     suspend fun update(siswa: DataSiswa)
+
+    @Query("SELECT * FROM datasiswa WHERE nisn = :nisn")
+    suspend fun getByNisn(nisn: String): DataSiswa?
 }
