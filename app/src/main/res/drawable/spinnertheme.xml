@@ -1,0 +1,4 @@
+<style android:name="spinnerTheme"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:name="android:textColor">#fff</item>
+</style>

@@ -27,7 +27,6 @@
             android:text="Bayu Kresna"
             android:fontFamily="@font/inter"/>
 
-
         <Spinner
             android:id="@+id/spinnerAbsen"
             android:textAlignment="center"

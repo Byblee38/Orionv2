@@ -2,6 +2,7 @@ package com.astrobyte.orion
 
 import android.view.*
 import android.widget.*
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.*
 
 // AbsenAdapter.kt
@@ -25,19 +26,64 @@ class AbsenAdapter(
         val siswa = siswaList[position]
         holder.namaText.text = siswa.nama
 
-        val options = listOf("Hadir", "Sakit", "Izin", "Alfa")
-        val adapter = ArrayAdapter(holder.itemView.context, android.R.layout.simple_spinner_item, options)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        holder.statusSpinner.adapter = adapter
+        val options = listOf("Hadir", "Sakit", "Izin", "Alpa")
+        val adapter = object : ArrayAdapter<String>(holder.itemView.context, R.layout.spinner_item, options) {
+            override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.spinner_item, parent, false)
+                val textView = view.findViewById<TextView>(R.id.text_spinner)
+                val status = getItem(position)
+                textView.text = status
 
+                when (status) {
+                    "Alpa" -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_red_light))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
+                    }
+                    "Hadir" -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_blue_light))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
+                    }
+                    else -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.black))
+                    }
+                }
+                return view
+            }
+
+            override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup): View {
+                val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.spinner_dropdown_item, parent, false)
+                val textView = view.findViewById<TextView>(R.id.text_spinner)
+                val status = getItem(position)
+                textView.text = status
+
+                when (status) {
+                    "Alpa" -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_red_light))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
+                    }
+                    "Hadir" -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_blue_light))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
+                    }
+                    else -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.black))
+                    }
+                }
+                return view
+            }
+        }
+
+        holder.statusSpinner.adapter = adapter
         holder.statusSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
                 statusMap[siswa.nisn] = options[pos]
             }
-
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
     }
+
 
     override fun getItemCount(): Int = siswaList.size
 }
