@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
@@ -40,18 +39,13 @@ class AddDataActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.jurusan,
-            R.layout.spinner
+            android.R.layout.simple_spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinnerPilihan.adapter = adapter
         }
 
         val btnSimpan: Button = findViewById(R.id.btnSimpan)
-        val btnBack: ImageButton = findViewById(R.id.btnBackUpdate)
-
-        btnBack.setOnClickListener{
-            finish()
-        }
 
         btnSimpan.setOnClickListener {
             val nama = inputNama.text.toString()

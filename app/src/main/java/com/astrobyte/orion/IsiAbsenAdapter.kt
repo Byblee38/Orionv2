@@ -29,10 +29,8 @@ class IsiAbsenAdapter(
 
         holder.namaSiswa.text = siswa.nama
 
-
-
-        val adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, statusList)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val adapter = ArrayAdapter(context, R.layout.spinner_item, statusList)
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
         holder.spinner.adapter = adapter
 
         val currentIndex = statusList.indexOf(absenSiswa.status)
