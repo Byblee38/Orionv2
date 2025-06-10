@@ -2,13 +2,7 @@ package com.astrobyte.orion
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.textfield.TextInputEditText
@@ -78,8 +72,7 @@ class AddDataActivity : AppCompatActivity() {
                         inputJk.isChecked = false
                         spinnerPilihan.setSelection(0)
 
-                        val intent = Intent(this@AddDataActivity, DataSiswaActivity::class.java)
-                        startActivity(intent)
+                        finish()
                     }
                 }
             }

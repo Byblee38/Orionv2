@@ -8,36 +8,41 @@
     android:background="#1A1A1A"
     tools:context=".HomeActivity">
 
-    <ImageView
-        android:id="@+id/logo_orion_"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="106dp"
-        android:layout_marginLeft="25dp"
-        android:src="@drawable/orion" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/forbtn">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/kontrol"
-        android:textSize="35dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerInParent="true"
-        android:id="@+id/text"
-        android:textColor="@color/white"
-        android:fontFamily="@font/interbold"
-        android:layout_marginLeft="56dp"
-        android:layout_below="@+id/logo_orion_"
-        />
+        <ImageView
+            android:id="@+id/logo_orion_"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="25dp"
+            android:src="@drawable/orion" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kontrol"
+            android:textSize="35dp"
+            android:id="@+id/text"
+            android:textColor="@color/white"
+            android:fontFamily="@font/interbold"
+            android:layout_marginLeft="50dp"
+            />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text"
         android:orientation="vertical"
+        android:id="@+id/forbtn"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="24dp"
         android:gravity="center">
 
         <Button

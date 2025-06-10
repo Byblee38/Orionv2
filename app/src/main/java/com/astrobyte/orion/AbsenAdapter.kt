@@ -43,9 +43,13 @@ class AbsenAdapter(
                         textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_blue_light))
                         textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
                     }
-                    else -> {
-                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent))
-                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.black))
+                    "Izin" -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_green_light))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
+                    }
+                    "Sakit" -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_orange_light))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
                     }
                 }
                 return view
@@ -66,9 +70,13 @@ class AbsenAdapter(
                         textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_blue_light))
                         textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
                     }
-                    else -> {
-                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.transparent))
-                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.black))
+                    "Izin" -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_green_light))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
+                    }
+                    "Sakit" -> {
+                        textView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.holo_orange_light))
+                        textView.setTextColor(ContextCompat.getColor(context, android.R.color.white))
                     }
                 }
                 return view
