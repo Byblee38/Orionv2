@@ -1,8 +1,9 @@
 package com.astrobyte.orion
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.textfield.TextInputEditText
@@ -61,8 +62,17 @@ class AddDataActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 val existingSiswa = dao.getByNisn(nisn)
                 if (existingSiswa != null) {
-                    Toast.makeText(this@AddDataActivity, "Data siswa sudah ada", Toast.LENGTH_SHORT).show()
-                    return@launch
+                    AlertDialog.Builder(this@AddDataActivity).apply {
+                        setTitle("Data Sudah Ada")
+                        setMessage("Siswa dengan NISN $nisn sudah ada di database.")
+                        setPositiveButton("OK") { dialog, _ ->
+                            dialog.dismiss()
+                        }
+                        setOnDismissListener {
+                            inputNisn.setText("")
+                        }
+                        create()
+                    }.show()
                 }else{
                     dao.insert(siswa)
                     runOnUiThread {

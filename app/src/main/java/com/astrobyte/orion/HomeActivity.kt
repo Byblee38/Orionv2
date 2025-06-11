@@ -7,13 +7,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.button.MaterialButton
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val btnIsiAbsen: Button = findViewById(R.id.btnIsiAbsen)
+        val btnIsiAbsen: MaterialButton = findViewById(R.id.btnIsiAbsen)
         val btnDataSiswa: Button = findViewById(R.id.btnDataSiswa)
         val btnRekapAbsen: Button = findViewById(R.id.btnRekapAbsen)
 

@@ -56,6 +56,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="350dp"
                 android:layout_height="50dp"
+                android:fontFamily="@font/spacemono"
                 android:id="@+id/inpName"
                 android:textColor="@color/white"
                 />
@@ -75,6 +76,7 @@
                 android:id="@+id/inpNisn"
                 android:inputType="number"
                 android:textColor="@color/white"
+                android:fontFamily="@font/spacemono"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,12 +101,14 @@
                 android:layout_width="150dp"
                 android:layout_height="50dp"
                 android:textColor="@color/white"
+                android:fontFamily="@font/spacemono"
                 android:text="Laki-Laki"/>
 
             <RadioButton
                 android:id="@+id/Pr"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
+                android:fontFamily="@font/spacemono"
                 android:layout_gravity="end"
                 android:layout_marginLeft="50dp"
                 android:textColor="@color/white"
@@ -123,6 +127,7 @@
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:backgroundTint="#1F90FF"
+            android:fontFamily="@font/spacemonobold"
             android:layout_below="@+id/text"
             android:id="@+id/btnSimpan"
             android:layout_centerHorizontal="true"
