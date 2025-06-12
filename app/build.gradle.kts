@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("com.github.furkankaplan:fk-blur-view-android:1.0.1")
 
     // TESTING
     testImplementation(libs.junit)

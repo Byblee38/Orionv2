@@ -3,10 +3,8 @@ package com.astrobyte.orion
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.github.furkankaplan.fkblurview.FKBlurView
 import com.google.android.material.button.MaterialButton
 
 class HomeActivity : AppCompatActivity() {
@@ -17,6 +15,9 @@ class HomeActivity : AppCompatActivity() {
         val btnIsiAbsen: MaterialButton = findViewById(R.id.btnIsiAbsen)
         val btnDataSiswa: Button = findViewById(R.id.btnDataSiswa)
         val btnRekapAbsen: Button = findViewById(R.id.btnRekapAbsen)
+        val glass : FKBlurView = findViewById(R.id.glass)
+
+        glass.setBlur(this,glass, 20)
 
         btnIsiAbsen.setOnClickListener {
             val intent = Intent(this, IsiAbsenActivity::class.java)

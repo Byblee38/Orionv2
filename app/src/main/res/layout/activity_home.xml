@@ -16,11 +16,21 @@
         android:layout_centerVertical="true"
         android:layout_above="@+id/forbtn">
 
-        <ImageView
-            android:id="@+id/logo_orion_"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:src="@drawable/orion" />
+
+        <com.github.furkankaplan.fkblurview.FKBlurView
+            android:layout_width="wrap_content"
+            android:id="@+id/glass"
+            android:padding="12dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logo_orion_"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/orion" />
+        </com.github.furkankaplan.fkblurview.FKBlurView>
+
+
 
         <TextView
             android:layout_width="match_parent"
